@@ -1,12 +1,13 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import styles from "./page.module.css";
+import Navbar from "./components/organisims/Navbar";
 
 export default function Home() {
   return (
-   <>
-   <h1>
-    Hello github
-   </h1>
-   </>
-  )
+    <>
+      <header className="header">
+        <Navbar />
+      </header>
+    </>
+  );
 }
