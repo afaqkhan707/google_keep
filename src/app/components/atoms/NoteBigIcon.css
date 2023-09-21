@@ -4,6 +4,7 @@
   border-radius: 50%;
   transition: opacity 0.218s ease-in;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 .input-box-icon-big img {
     width: 100%;
