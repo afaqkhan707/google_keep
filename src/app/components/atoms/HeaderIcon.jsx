@@ -1,13 +1,13 @@
-import React from 'react'
-import Image from 'next/image'
-import './HeaderIcon.css'
+import React from "react";
+import Image from "next/image";
+import "./HeaderIcon.css";
 
-const HeaderIcon = ({icon}) => {
+const HeaderIcon = ({ icon,title}) => {
   return (
-    <div className='icon-box'>
-      <Image src={icon} />
+    <div className="icon-box">
+      <Image src={icon} title={title} />
     </div>
-  )
-}
+  );
+};
 
-export default HeaderIcon
+export default HeaderIcon;

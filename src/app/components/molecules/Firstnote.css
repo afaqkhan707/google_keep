@@ -1,0 +1,8 @@
+.first-block{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    padding-bottom: 6px;
+    color: #45474d;
+  }

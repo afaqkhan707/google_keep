@@ -10,7 +10,7 @@ const SearchInput = () => {
     <>
       <div className="search-input-field">
         <span >
-          <HeaderIcon icon={searchIcon} />
+          <HeaderIcon icon={searchIcon} title ='Search' />
         </span>
         <input type="text" placeholder="Search" className="input-field" />
       </div>

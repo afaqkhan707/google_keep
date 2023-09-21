@@ -3,10 +3,12 @@
     align-items: center;
     width: fit-content;
     box-sizing: border-box;
-    gap: 18px;
+    gap: 15px;
+    cursor: pointer;
   }
   .LeftSideBar h3 {
     color: #5f6368;
     font-size: 22px;
   }
+ 
   
