@@ -5,10 +5,11 @@ import HeaderIcon from "./HeaderIcon";
 import styles from "./SearchInput.css";
 
 const SearchInput = () => {
+
   return (
     <>
       <div className="search-input-field">
-        <span>
+        <span >
           <HeaderIcon icon={searchIcon} />
         </span>
         <input type="text" placeholder="Search" className="input-field" />
