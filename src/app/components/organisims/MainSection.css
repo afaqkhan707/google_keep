@@ -1,0 +1,18 @@
+.main-section {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  gap: 10px;
+}
+.left-side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 100px);
+}
+.left-side-bar .license p {
+    padding: 0px 15px;
+    font-size: 10px;
+    font-style: italic;
+    color: #333;
+}

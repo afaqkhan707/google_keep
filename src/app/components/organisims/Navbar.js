@@ -1,12 +1,16 @@
 import React from "react";
-import Icons from "../molecules/Icons";
-import styles from './Navbar.css'
+import styles from "./Navbar.css";
+import LeftSIdeBar from "../molecules/LeftSIdeBar";
+import SearchInputField from "../molecules/SearchInputField";
+import NavbarRightSide from "../molecules/NavbarRightSide";
 
 const Navbar = () => {
   return (
     <>
-      <nav>
-        <Icons />
+      <nav className="navbar">
+        <LeftSIdeBar />
+        <SearchInputField/>
+        <NavbarRightSide/>
       </nav>
     </>
   );
