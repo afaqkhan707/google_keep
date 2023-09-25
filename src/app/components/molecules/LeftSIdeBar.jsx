@@ -1,8 +1,7 @@
 import hamburgerIcon from "../atoms/img/hamburgerIcon.svg";
 import HeaderIcon from "../atoms/HeaderIcon";
-import styles from "./LeftSideBar.css";
+import "./LeftSideBar.css";
 import Logo from "../atoms/Logo";
-import Sidebar from "./Sidebar.jsx";
 
 const LeftSideBar = () => {
   return (

@@ -1,14 +1,12 @@
 import React from "react";
-import styles from "./Navbar.css";
+import "./Navbar.css";
 import NavbarRightSide from "../molecules/NavbarRightSide";
 import SearchInput from "../atoms/SearchInput";
-import LeftSideBar from "../molecules/LeftSideBar";
+import LeftSideBar from "../molecules/LeftSideBar.jsx";
 
 
 const Navbar = () => {
-  const test = ()=>{
-    alert()
-  }
+
   return (
     <>
       <nav className="navbar">
