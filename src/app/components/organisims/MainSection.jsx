@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Sidebar from "../molecules/Sidebar";
-imports "../organisims/MainSection.css";
+import "../organisims/MainSection.css";
 import Note from "../molecules/Note";
 // import ThemeBox from "../molecules/ThemeBox.jsx";
 
