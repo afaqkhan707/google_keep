@@ -10,6 +10,7 @@ import archiveThinIcon from "../atoms/img/archiveThinIcon.svg";
 import moreIcon from "../atoms/img/moreIcon.svg";
 import undoIcon from "../atoms/img/undoIcon.svg";
 import redoIcon from "../atoms/img/redoIcon.svg";
+
 const Note = () => {
   const [noteText, setNoteText] = useState("");
   const [cardText, setCardText] = useState([]);
@@ -25,11 +26,19 @@ const Note = () => {
     }
   };
 
+  const handleAddCard = () => {
+    if (noteText.trim() !== "") {
+      setCardText([...cardText, noteText]);
+      setNoteText("");
+    }
+  };
+
   return (
     <>
       <div className="note">
         <div className="take-note">
           <TakeNoteFirst />
+          
           <div className="second-block">
             <input
               onKeyPress={insertText}
@@ -52,16 +61,16 @@ const Note = () => {
               <NoteIcons icon={redoIcon} alttxt="redoIcon" />
             </div>
             <div className="btn">
-              <button>Close</button>
+              <button onClick={handleAddCard}>Close</button>
             </div>
           </div>
         </div>
       </div>
 
       <div className="card">
-      {cardText.map((text) => (
-          <div className="output">
-            <p>{text}</p>
+        {cardText.map((text, index) => (
+          <div key={index} className="output">
+            <p >{text}</p>
             <div className="taken-note-icons">
               <NoteIcons icon={addIcon} alttxt="addIcon-svg" />
               <NoteIcons icon={personaddIcon} alttxt="personaddIcon-svg" />
@@ -71,7 +80,7 @@ const Note = () => {
               <NoteIcons icon={moreIcon} alttxt="moreIcon-svg" />
             </div>
           </div>
-      ))}
+        ))}
       </div>
     </>
   );

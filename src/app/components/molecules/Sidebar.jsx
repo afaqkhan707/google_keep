@@ -1,4 +1,5 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import SidebarIcons from "../atoms/SidebarIcons";
 import lightbulbIcon from "../atoms/img/lightbulbIcon.svg";
 import reminderIcon from "../atoms/img/notificationIcon.svg";
@@ -9,13 +10,14 @@ import style from "./sidebar.css";
 
 
 const Sidebar = () => {
+
   return (
     <>
       <div className="left-side-bar">
         <div>
           <SidebarIcons icon={lightbulbIcon} text="Notes" altxtsideicon='lightbulbIcon-svg' />
           <SidebarIcons icon={reminderIcon} text="Reminders" altxtsideicon='reminderIcon-svg'/>
-          <SidebarIcons icon={editIcon} text="Edit Labels" altxtsideicon='editIcon-svg'/>
+          <SidebarIcons icon={editIcon} text="Edit Labels"  altxtsideicon='editIcon-svg' />
           <SidebarIcons icon={archiveIcon} text="Archive" altxtsideicon='archiveIcon-svg'/>
           <SidebarIcons icon={deleteIcon} text="Trash" altxtsideicon='trashIcon-svg'/>
         </div>
