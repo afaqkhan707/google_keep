@@ -1,4 +1,4 @@
-.side-icons {
+.side-icons{
   display: flex;
   align-items: center;
   gap: 30px;
@@ -12,6 +12,7 @@
   opacity: 0.4;
 }
 .side-icons:hover {
+  transition: all 1 ease-in-out;
   background-color: #f0f0f0;
 }
 

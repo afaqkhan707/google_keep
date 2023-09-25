@@ -6,7 +6,7 @@ const Logo = (til) => {
   return (
     <>
     <div>
-      <Image src={LogoImg} width={40} height={40} title={til}/>
+      <Image src={LogoImg} width={40} height={40} title={til} alt='logo_image'/>
     </div>
     </>
   );

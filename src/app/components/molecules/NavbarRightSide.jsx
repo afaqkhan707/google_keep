@@ -12,11 +12,11 @@ const NavbarRightSide = () => {
   return (
     <>
       <div className="navbar-right-side">
-        <HeaderIcon icon={refreshIcon} title ='Refresh'  />
-        <HeaderIcon icon={viewlistIcon} title ='List view' />
-        <HeaderIcon icon={settingsIcon} title ='Settings' />
-        <HeaderIcon icon={appsIcon} title ='apps' />
-        <HeaderIcon icon={useraccountIcon} title ='user Account' />
+        <HeaderIcon icon={refreshIcon} title ='Refresh' alt='refresh-icon-svg' />
+        <HeaderIcon icon={viewlistIcon} title ='List view' alt='view-icon-svg'/>
+        <HeaderIcon icon={settingsIcon} title ='Settings' alt='settings-icon-svg'/>
+        <HeaderIcon icon={appsIcon} title ='apps' alt='apps-icon-svg'/>
+        <HeaderIcon icon={useraccountIcon} title ='user Account' alt='user-account-icon-svg'/>
       </div>
     </>
   );

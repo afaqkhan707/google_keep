@@ -3,11 +3,11 @@ import style from './Noteicons.css';
 import Image from 'next/image';
 
 
-const NoteIcons = ({icon}) => {
+const NoteIcons = ({icon,alttxt}) => {
   return (
     <>
 <div className="icons">
-    <Image src={icon}/>
+    <Image src={icon} alt={alttxt}/>
 </div>
     </>
   )

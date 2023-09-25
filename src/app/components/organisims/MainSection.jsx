@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Sidebar from "../molecules/Sidebar";
 import styles from "../organisims/MainSection.css";
 import Note from "../molecules/Note";
-import ThemeBox from "../molecules/ThemeBox.jsx";
+// import ThemeBox from "../molecules/ThemeBox.jsx";
 
 const MainSection = () => {
   return (
@@ -12,7 +12,7 @@ const MainSection = () => {
         <Sidebar />
         <div className="main-sub-section">
         <Note />
-        <ThemeBox />
+        {/* <ThemeBox /> */}
         </div>
       </section>
     </>

@@ -5,8 +5,8 @@ import NoteBigIcon from '../atoms/NoteBigIcon';
 const TakeNoteFirst = () => {
   return (
     <div className="first-block">
-    <span>Title</span>
-    <NoteBigIcon/>
+    <input type="text" placeholder='Title' />
+    <NoteBigIcon alttext='pinIcon-svg'/>
     </div>
   )
 }

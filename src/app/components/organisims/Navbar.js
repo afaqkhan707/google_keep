@@ -4,7 +4,11 @@ import NavbarRightSide from "../molecules/NavbarRightSide";
 import SearchInput from "../atoms/SearchInput";
 import LeftSideBar from "../molecules/LeftSideBar";
 
+
 const Navbar = () => {
+  const test = ()=>{
+    alert()
+  }
   return (
     <>
       <nav className="navbar">

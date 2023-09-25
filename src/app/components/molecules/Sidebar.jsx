@@ -13,11 +13,11 @@ const Sidebar = () => {
     <>
       <div className="left-side-bar">
         <div>
-          <SidebarIcons icon={lightbulbIcon} text="Notes" />
-          <SidebarIcons icon={reminderIcon} text="Reminders" />
-          <SidebarIcons icon={editIcon} text="Edit Labels" />
-          <SidebarIcons icon={archiveIcon} text="Archive" />
-          <SidebarIcons icon={deleteIcon} text="Trash" />
+          <SidebarIcons icon={lightbulbIcon} text="Notes" altxtsideicon='lightbulbIcon-svg' />
+          <SidebarIcons icon={reminderIcon} text="Reminders" altxtsideicon='reminderIcon-svg'/>
+          <SidebarIcons icon={editIcon} text="Edit Labels" altxtsideicon='editIcon-svg'/>
+          <SidebarIcons icon={archiveIcon} text="Archive" altxtsideicon='archiveIcon-svg'/>
+          <SidebarIcons icon={deleteIcon} text="Trash" altxtsideicon='trashIcon-svg'/>
         </div>
         <div className="license">
           <p> Open Source License</p>

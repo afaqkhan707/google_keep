@@ -1,7 +1,7 @@
 .navbar{
-  min-height: 20px;
+  min-height: 18px;
   width: 100%;
-  padding:8px 12px;
+  padding:6px 12px;
   box-sizing: border-box;
   color: #202124;
   display: flex;

@@ -1,8 +1,17 @@
-.first-block{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 500;
-    padding-bottom: 6px;
-    color: #45474d;
-  }
+.first-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  padding-bottom: 6px;
+  color: #45474d;
+}
+.first-block input {
+  width: 100%;
+  padding: 12px 16px;
+  width: 100%;
+  border: none;
+}
+.first-block input:focus {
+  outline: none;
+}

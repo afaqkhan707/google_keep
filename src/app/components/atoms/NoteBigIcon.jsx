@@ -3,10 +3,10 @@ import Image from 'next/image';
 import style from './NoteBigIcon.css'
 import pinIcon from './img/pinIcon.svg'
 
-const NoteBigIcon = () => {
+const NoteBigIcon = ({alttext}) => {
   return (
     <div className='input-box-icon-big'>
-      <Image src={pinIcon}/>
+      <Image src={pinIcon} alt={alttext}/>
     </div>
   )
 }
