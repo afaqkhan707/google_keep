@@ -15,7 +15,7 @@ import deleteNoteIcon from "../atoms/img/deleteNoteIcon.svg";
 import NoteBigIcon from "../atoms/NoteBigIcon";
 import penIcon from "../atoms/img/penIcon.svg";
 import imageIcon from "../atoms/img/imgIcon.svg";
-import checkBoxIcon from "../atoms/img/checkBoxIcon.svg";
+// import checkBoxIcon from "../atoms/img/checkBoxIcon.svg";
 
 const Note = () => {
   const [showContent, setShowContetent] = useState(false);
@@ -109,7 +109,7 @@ const Note = () => {
             {showContent || (
               <>
                 <div className="second-block-icon">
-                  <Image src={checkBoxIcon} alt="" />
+                  {/* <Image src={checkBoxIcon} alt="" /> */}
                 </div>
                 <div className="second-block-icon">
                   <Image src={penIcon} alt="" />
