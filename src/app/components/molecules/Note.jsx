@@ -15,64 +15,40 @@ import deleteNoteIcon from "../atoms/img/deleteNoteIcon.svg";
 import NoteBigIcon from "../atoms/NoteBigIcon";
 import penIcon from "../atoms/img/penIcon.svg";
 import imageIcon from "../atoms/img/imgIcon.svg";
-// import checkBoxIcon from "../atoms/img/checkBoxIcon.svg";
+import checkBoxIcon from "../atoms/img/checkBoxIcon.svg";
 
 const Note = () => {
   const [showContent, setShowContetent] = useState(false);
-  const [cardText, setCardText] = useState([]);
-  const [noteText, setNoteText] = useState("");
-  const [noteTitleText, setTitleText] = useState("");
+  const [formData, setFormData] = useState({title: '', description: ''});
   const [cardStorageData, setCardStorageData] = useState([]);
-  const [cardData, setCardData] = useState([]);
-
-  const handleNoteChange = (e) => {
-    setNoteText(e.target.value);
-  };
-  const handleTitleChange = (e) => {
-    setTitleText(e.target.value);
-  };
 
   useEffect(() => {
+    const storedDataArray = JSON.parse(localStorage.getItem('cardData')) || [];
+    setCardStorageData(storedDataArray);
+  }, []);
 
-      if(cardData.length > 0){
-        cardData.forEach((e)=>{
-          localStorage.setItem("cardData", JSON.stringify([...cardStorageData, e]));
-        })
-      }
-      const newCardStorageData = [];
-      newCardStorageData.push(JSON.parse(localStorage.getItem('cardData')))
-      setCardStorageData(newCardStorageData)
-  }, [cardData]);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    console.log(name)
+    setFormData({...formData, [name]: value,});
+  };
 
-  useEffect(()=>{
-    console.log(cardStorageData)
-  }, [cardStorageData])
 
-  const handleAddCard = () => {
-    const newCardData = [
-      ...cardData,
-      { title: noteTitleText, description: noteText },
-    ];
-    setCardData(newCardData);
 
-    if (noteText && noteTitleText) {
-      const newNote = { noteTitleText, noteText };
-      setCardText([...cardText, newNote]);
-      setTitleText("");
-      setNoteText("");
-      console.log(
-        "New Add Note is Added",
-        "Title Length:",
-        newNote.noteText.length,
-        "&& Note Text Length:",
-        newNote.noteTitleText.length
-      );
+  const handleAddCard = (event) => {
+    if(formData.title.length && formData.description.length){
+      event.preventDefault()
+      const updatedFormDataArray = [...cardStorageData, formData];
+    setCardStorageData(updatedFormDataArray);
+    localStorage.setItem('cardData', JSON.stringify(updatedFormDataArray));
+    setFormData({title: "", description: ""})
     }
   };
 
   const handleDeleteCard = (index) => {
-    const newArray = cardText.filter((e, i) => i != index);
-    setCardText(newArray);
+    const updatedFormDataArray = cardStorageData.filter((e, i) => i != index);
+    setCardStorageData(updatedFormDataArray);
+    localStorage.setItem('cardData', JSON.stringify(updatedFormDataArray));
   };
 
   const handleShowContent = () => {
@@ -85,31 +61,35 @@ const Note = () => {
 
   return (
     <>
-      <div className="note">
+      <form className="note">
         <div className="take-note">
           {showContent && (
             <div className="first-block">
               <input
+              name="title"
                 type="text"
-                onChange={handleTitleChange}
+                onChange={handleChange}
                 placeholder="Title"
-                value={noteTitleText}
+                value={formData.title}
+                required
               />
               <NoteBigIcon alttext="pinIcon-svg" />
             </div>
           )}
           <div className="second-block">
             <input
-              value={noteText}
-              onChange={handleNoteChange}
+            name="description"
+              value={formData.description}
+              onChange={handleChange}
               type="text"
               placeholder="Take a note..."
               onClick={handleShowContent}
+              required
             />
             {showContent || (
               <>
                 <div className="second-block-icon">
-                  {/* <Image src={checkBoxIcon} alt="" /> */}
+                  <Image src={checkBoxIcon} alt="checkBoxIcon" />
                 </div>
                 <div className="second-block-icon">
                   <Image src={penIcon} alt="" />
@@ -143,9 +123,10 @@ const Note = () => {
             </div>
           )}
         </div>
-      </div>
-     {/* {cardStorageData.length > 0 &&  <div className="card">
-        {cardStorageData[0].map((item, index) => (
+      </form>
+       <h1>Total Cards: {cardStorageData.length}</h1>
+     {cardStorageData.length > 0 &&  <div className="card">
+        {cardStorageData.map((item, index) => (
           <div key={index} className="output">
             <p>{item.title}</p>
             <p>{item.description}</p>
@@ -164,7 +145,7 @@ const Note = () => {
             </div>
           </div>
         ))}
-      </div>} */}
+      </div>}
     </>
   );
 };

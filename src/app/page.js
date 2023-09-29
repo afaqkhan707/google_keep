@@ -11,12 +11,9 @@ export default function Home() {
   return (
     <>
       <nav className="header">
-      <div>
-    
-    </div>
+   
         <Navbar >
   <TodoStore>
-        <button>HELLO</button>
       </TodoStore>
         </Navbar>
         <MainSection />

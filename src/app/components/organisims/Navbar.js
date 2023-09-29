@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import NavbarRightSide from "../molecules/NavbarRightSide";
 import SearchInput from "../atoms/SearchInput";
-// import LeftSideBar from "../molecules/LeftSideBar";
+import LeftSideBar from "../molecules/LeftSideBar";
 
 
 
@@ -12,8 +12,7 @@ const Navbar = () => {
     <>
     
       <nav className="navbar">
-        {/* <LeftSideBar /> */}
-        <h1>Side bar</h1>
+        <LeftSideBar />
         <SearchInput />
         <NavbarRightSide />
       </nav>
