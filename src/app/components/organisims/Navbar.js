@@ -2,10 +2,11 @@ import React from "react";
 import "./Navbar.css";
 import NavbarRightSide from "../molecules/NavbarRightSide";
 import SearchInput from "../atoms/SearchInput";
-import LeftSideBar from "../molecules/LeftSideBar.jsx";
+import LeftSideBar from "../molecules/LeftSideBar";
 
 
-const Navbar = () => {
+
+const Navbar = ({child}) => {
 
   return (
     <>

@@ -1,16 +1,54 @@
 .note {
   width: 100%;
-  height: 240px;
+  height: 200px;
 }
 .take-note {
   border-radius: 8px;
   margin: 32px auto 16px auto;
-  padding: 15px;
+  padding: 10px;
   width: 600px;
   height: fit-content;
   min-height: 60px;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
     0 2px 6px 2px rgba(60, 64, 67, 0.149);
+}
+.first-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  color: #45474d;
+  padding: 12px 0;
+}
+.first-block input {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+}
+.first-block input:focus {
+  outline: none;
+}
+.second-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.second-block-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transition: opacity 0.218s ease-in;
+  cursor: pointer;
+  margin: 0 8px;
+  padding: 3px;
+}
+.second-block-icon:hover {
+  opacity: 0.8;
+  background-color: #e9eaea;
 }
 .take-note .second-block input {
   padding: 12px 16px;
@@ -34,16 +72,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px 10px;
 }
 .output {
   min-height: 150px;
-  width: 320px;
+  width: 350px;
   border-radius: 8px;
   padding: 14px;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
     0 2px 6px 2px rgba(60, 64, 67, 0.149);
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -57,13 +95,15 @@
 }
 
 .btn button {
-  font-size: 18px;
+  font-size: 16px;
   color: #000;
-  margin-right: 15px;
+  margin-right: 1px;
   border-radius: 4px;
   border: none;
   background-color: #fff;
   cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
 }
 .btn button:hover {
   background-color: #e9eaea;
@@ -72,5 +112,5 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
-  row-gap: 16px;
+  row-gap: 12px;
 }
