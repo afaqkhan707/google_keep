@@ -10,8 +10,10 @@ const Navbar = () => {
 
   return (
     <>
+    
       <nav className="navbar">
-        <LeftSideBar />
+        {/* <LeftSideBar /> */}
+        <h1>Side bar</h1>
         <SearchInput />
         <NavbarRightSide />
       </nav>
