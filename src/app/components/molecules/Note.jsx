@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import "./Note.css";
 import NoteIcons from "../atoms/NoteIcons";
@@ -16,39 +16,40 @@ import NoteBigIcon from "../atoms/NoteBigIcon";
 import penIcon from "../atoms/img/penIcon.svg";
 import imageIcon from "../atoms/img/imgIcon.svg";
 import checkBoxIcon from "../atoms/img/checkBoxIcon.svg";
+import { TotalContext } from "@/app/controllers/TodoListStore";
 
 const Note = () => {
+  const { notesList, setNotesList } = useContext(TotalContext);
+
   const [showContent, setShowContetent] = useState(false);
-  const [formData, setFormData] = useState({title: '', description: ''});
-  const [cardStorageData, setCardStorageData] = useState([]);
+  
+  const [formData, setFormData] = useState({ title: "", description: "" });
 
   useEffect(() => {
-    const storedDataArray = JSON.parse(localStorage.getItem('cardData')) || [];
-    setCardStorageData(storedDataArray);
+    const storedDataArray = JSON.parse(localStorage.getItem("cardData")) || [];
+    setNotesList(storedDataArray);
   }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name)
-    setFormData({...formData, [name]: value,});
+    console.log(name);
+    setFormData({ ...formData, [name]: value });
   };
 
-
-
   const handleAddCard = (event) => {
-    if(formData.title.length && formData.description.length){
-      event.preventDefault()
-      const updatedFormDataArray = [...cardStorageData, formData];
-    setCardStorageData(updatedFormDataArray);
-    localStorage.setItem('cardData', JSON.stringify(updatedFormDataArray));
-    setFormData({title: "", description: ""})
+    if (formData.title.length && formData.description.length) {
+      event.preventDefault();
+      const updatedFormDataArray = [...notesList, formData];
+      setNotesList(updatedFormDataArray);
+      localStorage.setItem("cardData", JSON.stringify(updatedFormDataArray));
+      setFormData({ title: "", description: "" });
     }
   };
 
   const handleDeleteCard = (index) => {
-    const updatedFormDataArray = cardStorageData.filter((e, i) => i != index);
-    setCardStorageData(updatedFormDataArray);
-    localStorage.setItem('cardData', JSON.stringify(updatedFormDataArray));
+    const updatedFormDataArray = notesList.filter((e, i) => i != index);
+    setNotesList(updatedFormDataArray);
+    localStorage.setItem("cardData", JSON.stringify(updatedFormDataArray));
   };
 
   const handleShowContent = () => {
@@ -66,7 +67,7 @@ const Note = () => {
           {showContent && (
             <div className="first-block">
               <input
-              name="title"
+                name="title"
                 type="text"
                 onChange={handleChange}
                 placeholder="Title"
@@ -78,7 +79,7 @@ const Note = () => {
           )}
           <div className="second-block">
             <input
-            name="description"
+              name="description"
               value={formData.description}
               onChange={handleChange}
               type="text"
@@ -124,28 +125,25 @@ const Note = () => {
           )}
         </div>
       </form>
-       <h1>Total Cards: {cardStorageData.length}</h1>
-     {cardStorageData.length > 0 &&  <div className="card">
-        {cardStorageData.map((item, index) => (
-          <div key={index} className="output">
-            <p>{item.title}</p>
-            <p>{item.description}</p>
-            <div className="taken-note-icons">
-              <NoteIcons icon={addIcon} alttxt="addIcon-svg" />
-              <NoteIcons icon={personaddIcon} alttxt="personaddIcon-svg" />
-              <NoteIcons icon={paintIcon} alttxt="paintIcon-svg" />
-              <NoteIcons icon={imgIcon} alttxt="imgIcon-svg" />
-              <NoteIcons icon={archiveThinIcon} alttxt="archiveIcon-svg" />
-              <NoteIcons icon={moreIcon} alttxt="moreIcon-svg" />
-              <NoteIcons
-                onClick={() => handleDeleteCard(index)}
-                icon={deleteNoteIcon}
-                alttxt="deleteNoteIcon"
-              />
+      {notesList.length > 0 && (
+        <div className="card">
+          {notesList.map((item, index) => (
+            <div key={index} className="output">
+              <p>{item.title}</p>
+              <p>{item.description}</p>
+              <div className="taken-note-icons">
+                <NoteIcons icon={addIcon} alttxt="addIcon-svg" />
+                <NoteIcons icon={personaddIcon} alttxt="personaddIcon-svg" />
+                <NoteIcons icon={paintIcon} alttxt="paintIcon-svg" />
+                <NoteIcons icon={imgIcon} alttxt="imgIcon-svg" />
+                <NoteIcons icon={archiveThinIcon} alttxt="archiveIcon-svg" />
+                <NoteIcons icon={moreIcon} alttxt="moreIcon-svg" />
+                <NoteIcons   icon={deleteNoteIcon} alttxt="deleteNoteIcon" onClick={() => handleDeleteCard(index)} />
+              </div>
             </div>
-          </div>
-        ))}
-      </div>}
+          ))}
+        </div>
+      )}
     </>
   );
 };

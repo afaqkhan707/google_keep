@@ -2,12 +2,14 @@
 import { useState } from 'react';
 import React, { createContext } from 'react';
 
-export const TotalContext =createContext(0)
+export const TotalContext =createContext()
 
 const TodoStore =({children})=>{
-    const [counts ,setCounts]= useState(0)
+
+    const [notesList ,setNotesList]= useState([])
+
     return (
-        <TotalContext.Provider  value={{ counts, setCounts }}>
+        <TotalContext.Provider value={{ notesList, setNotesList,  }}>
              {children}
         </TotalContext.Provider>
     )

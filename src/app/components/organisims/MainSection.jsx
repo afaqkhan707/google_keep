@@ -13,7 +13,6 @@ const MainSection = () => {
         <div className="main-sub-section">
         <Note />
         {/* <ThemeBox /> */}
-        {/* <TestLocalStorage/> */}
         </div>
       </section>
     </>
